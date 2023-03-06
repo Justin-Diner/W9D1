@@ -16,7 +16,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _moving_object__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./moving_object */ \"./src/moving_object.js\");\n\n\nconst mo = new _moving_object__WEBPACK_IMPORTED_MODULE_0__[\"default\"]({\n    pos: [100, 75],\n    vel: [50, 0],\n    radius: 50,\n    color: \"green\"\n  });\n\n\n  document.addEventListener(\"DOMContentLoaded\", function() {\n    const canvas = document.getElementById(\"game-canvas\");\n\tcanvas.height = 500; \n\tcanvas.width = 500;\n\tconst ctx = canvas.getContext(\"2d\");\n\n    mo.draw(ctx);\n    setInterval(mo.move(), 500)\n\n    window.requestAnimationFrame(mo.draw(ctx));\n});\n\n\nconsole.log(\"Webpack is working!\")\n\n//# sourceURL=webpack://w9d1/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _moving_object__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./moving_object */ \"./src/moving_object.js\");\n\n\nconst mo = new _moving_object__WEBPACK_IMPORTED_MODULE_0__[\"default\"]({\n    pos: [100, 75],\n    vel: [50, 0],\n    radius: 50,\n    color: \"green\"\n  });\n\n\n  document.addEventListener(\"DOMContentLoaded\", function() {\n    const canvas = document.getElementById(\"game-canvas\");\n\tcanvas.height = 500; \n\tcanvas.width = 500;\n\tconst ctx = canvas.getContext(\"2d\");\n\n    mo.draw(ctx);\n    setInterval(mo.move(), 500)\n\n});\n\n\nconsole.log(\"Webpack is working!\")\n\n//# sourceURL=webpack://w9d1/./src/index.js?");
 
 /***/ }),
 

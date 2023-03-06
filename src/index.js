@@ -17,7 +17,6 @@ const mo = new MovingObject({
     mo.draw(ctx);
     setInterval(mo.move(), 500)
 
-    window.requestAnimationFrame(mo.draw(ctx));
 });
 
 
