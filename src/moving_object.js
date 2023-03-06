@@ -1,16 +1,22 @@
 export default class MovingObject {
-    constructor(pos, vel, radius, color) {
-    this.pos = pos;
-	this.vel = vel;
-	this.radius = radius; 
-	this.color = color; 
+    constructor(obj) {
+    this.pos = obj.pos;
+	this.vel = obj.vel;
+	this.radius = obj.radius; 
+	this.color = obj.color; 
 	}
 
 	draw(ctx) {
+        ctx.clearRect(0, 0, 500, 500);
 		ctx.beginPath();
-		ctx.arc(this.pos[0], this.pos[1], this.radius[0], this.radius[1], 2 * Math.PI);
+		ctx.arc(this.pos[0], this.pos[1], this.radius, 0, 2 * Math.PI);
 		ctx.fillStyle = "green";
 		ctx.fill();
-		ctx.stroke(); 
+		ctx.stroke();
 	}
+
+    move() {
+        this.pos[0] += this.vel[0];
+        this.pos[1] += this.vel[1];
+    }
 }

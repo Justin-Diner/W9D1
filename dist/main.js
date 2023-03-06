@@ -16,7 +16,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _moving_object__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./moving_object */ \"./src/moving_object.js\");\n\n\n\nconst mo = new _moving_object__WEBPACK_IMPORTED_MODULE_0__[\"default\"]({\n\tpos: [100, 75],\n\tvel: [50, 0],\n\tradius: 50,\n\tcolor: \"green\"\n  });\n\ndocument.addEventListener(\"DOMContentLoaded\", function() {\n    const canvas = document.getElementById(\"game-canvas\");\n\tcanvas.height = 500; \n\tcanvas.width = 500;\n\tconst ctx = canvas.getContext(\"2d\");\n\tmo.draw(ctx);\n\n\n\t\n});\n\n\nconsole.log(\"Webpack is working!\")\n\n//# sourceURL=webpack://w9d1/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _moving_object__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./moving_object */ \"./src/moving_object.js\");\n\n\nconst mo = new _moving_object__WEBPACK_IMPORTED_MODULE_0__[\"default\"]({\n    pos: [100, 75],\n    vel: [50, 0],\n    radius: 50,\n    color: \"green\"\n  });\n\n\n  document.addEventListener(\"DOMContentLoaded\", function() {\n    const canvas = document.getElementById(\"game-canvas\");\n\tcanvas.height = 500; \n\tcanvas.width = 500;\n\tconst ctx = canvas.getContext(\"2d\");\n\n    mo.draw(ctx);\n    setInterval(mo.move(), 500)\n\n    window.requestAnimationFrame(mo.draw(ctx));\n});\n\n\nconsole.log(\"Webpack is working!\")\n\n//# sourceURL=webpack://w9d1/./src/index.js?");
 
 /***/ }),
 
@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mov
   \******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ MovingObject)\n/* harmony export */ });\nclass MovingObject {\n    constructor(pos, vel, radius, color) {\n    this.pos = pos;\n\tthis.vel = vel;\n\tthis.radius = radius; \n\tthis.color = color; \n\t}\n\n\tdraw(ctx) {\n\t\tctx.beginPath();\n\t\tctx.arc(this.pos[0], this.pos[1], this.radius[0], this.radius[1], 2 * Math.PI);\n\t\tctx.fillStyle = \"green\";\n\t\tctx.fill();\n\t\tctx.stroke(); \n\t}\n}\n\n//# sourceURL=webpack://w9d1/./src/moving_object.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ MovingObject)\n/* harmony export */ });\nclass MovingObject {\n    constructor(obj) {\n    this.pos = obj.pos;\n\tthis.vel = obj.vel;\n\tthis.radius = obj.radius; \n\tthis.color = obj.color; \n\t}\n\n\tdraw(ctx) {\n        ctx.clearRect(0, 0, 500, 500);\n\t\tctx.beginPath();\n\t\tctx.arc(this.pos[0], this.pos[1], this.radius, 0, 2 * Math.PI);\n\t\tctx.fillStyle = \"green\";\n\t\tctx.fill();\n\t\tctx.stroke();\n\t}\n\n    move() {\n        this.pos[0] += this.vel[0];\n        this.pos[1] += this.vel[1];\n    }\n}\n\n//# sourceURL=webpack://w9d1/./src/moving_object.js?");
 
 /***/ })
 
